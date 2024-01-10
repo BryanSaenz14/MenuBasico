@@ -1,0 +1,73 @@
+$Color1: #000000;
+
+@mixin posicion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  
+}
+
+.contenedor{
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5db;
+  border-bottom: 1px solid $Color1;
+
+  &-izq{
+    @include posicion;
+
+    a{
+      color: $Color1;
+      border-bottom: 1px solid $Color1;
+      margin: 10px;
+    }
+  }
+
+  &-der{
+    @include posicion;
+
+    a{
+      color: $Color1;
+      margin: 10px;
+    }
+    
+    a:hover{
+      cursor: pointer;
+      color: #337644;
+      border-bottom: 1px solid $Color1;
+    }
+
+  }
+}
+
+@media (max-width: 680px) {
+  .contenedor{
+    flex-direction: column;
+
+    &-izq{
+      padding: 10px;
+
+      a{
+        margin: 5px;
+      }
+    }
+
+    &-der{
+      padding: 10px;
+
+      a{
+        margin: 5px;
+      }
+    }
+  }
+}
